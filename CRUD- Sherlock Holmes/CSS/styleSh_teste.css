@@ -1,0 +1,286 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Special+Elite&family=Work+Sans:wght@300;400;600&display=swap');
+
+:root {
+    --verde-vitoriano: #1b3a2b;    /* Verde escuro clássico britânico */
+    --verde-musgo: #2d5a27;        /* Verde intermediário para botões e foco */
+    --verde-claro: #eef5f0;        /* Fundo suave para alertas e tabelas */
+    --marrom-couro: #3e2723;       /* Tons de madeira/couro antigo */
+    --dourado-velho: #c5a059;      /* Detalhes, bordas e links */
+    --bege-papel: #fbf8f3;         /* Cor de fundo imitando papel antigo */
+    --texto-escuro: #2b2b2b;       /* Texto principal */
+    --fonte-serifa: 'Playfair Display', Georgia, serif;
+    --fonte-maquina: 'Special Elite', Courier, monospace;
+    --fonte-padrao: 'Work Sans', Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bege-papel);
+    color: var(--texto-escuro);
+    font-family: var(--fonte-padrao);
+    line-height: 1.6;
+    padding: 40px 20px;
+    background-image: radial-gradient(rgba(27, 58, 43, 0.03) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(27, 58, 43, 0.1);
+    border-top: 8px solid var(--verde-vitoriano);
+    border-bottom: 4px solid var(--marrom-couro);
+    position: relative;
+}
+
+/* Marca d'água decorativa ou elemento de topo */
+.container::before {
+    content: "🔎";
+    position: absolute;
+    top: -25px;
+    left: calc(50% - 20px);
+    background: var(--bege-papel);
+    font-size: 24px;
+    padding: 0 10px;
+}
+
+/* ==========================================================================
+   TIPOGRAFIA
+   ========================================================================== */
+
+h1 {
+    font-family: var(--fonte-serifa);
+    color: var(--verde-vitoriano);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-family: var(--fonte-serifa);
+    color: var(--marrom-couro);
+    font-size: 1.6rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed var(--dourado-velho);
+    padding-bottom: 5px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, var(--dourado-velho), transparent);
+    margin: 30px 0;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Mensagens de Alerta */
+p strong {
+    display: block;
+    background-color: var(--verde-claro);
+    color: var(--verde-vitoriano);
+    padding: 15px;
+    border-left: 5px solid var(--verde-vitoriano);
+    font-family: var(--fonte-maquina);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+FORMULÁRIOS
+   ========================================================================== */
+
+form {
+    background: #fafafa;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-family: var(--fonte-serifa);
+    font-weight: 700;
+    color: var(--verde-vitoriano);
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    font-family: var(--fonte-padrao);
+    font-size: 1rem;
+    color: var(--texto-escuro);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--verde-musgo);
+    box-shadow: 0 0 5px rgba(45, 90, 39, 0.3);
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Customização de Radios */
+.radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: var(--verde-vitoriano);
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.label-inline {
+    display: inline;
+    font-family: var(--fonte-padrao);
+    font-weight: normal;
+    color: var(--texto-escuro);
+    margin-left: -12px;
+    cursor: pointer;
+}
+
+/* Botões */
+button, .btn-salvar {
+    display: inline-block;
+    background-color: var(--verde-vitoriano);
+    color: #ffffff;
+    font-family: var(--fonte-serifa);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+button:hover, .btn-salvar:hover {
+    background-color: var(--verde-musgo);
+}
+
+button:active, .btn-salvar:active {
+    transform: translateY(1px);
+}
+
+/* ==========================================================================
+TABELAS (A Lista de Suspeitos)
+   ========================================================================== */
+
+.tabela-suspeitos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.tabela-suspeitos th {
+    background-color: var(--verde-vitoriano);
+    color: #ffffff;
+    font-family: var(--fonte-serifa);
+    font-weight: 600;
+    padding: 14px 12px;
+    text-align: left;
+    font-size: 1rem;
+    border-bottom: 3px solid var(--dourado-velho);
+}
+
+.tabela-suspeitos td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.tabela-suspeitos tr:nth-child(even) {
+    background-color: var(--verde-claro);
+}
+
+.tabela-suspeitos tr:hover {
+    background-color: #f1ebd9; /* Destaque suave ao passar o mouse */
+}
+
+/* Classes para os Níveis de Suspeita */
+/* Se quiser aplicar cores dinâmicas no PHP futuramente */
+.nivel-Alto { color: #b71c1c; font-weight: bold; }
+.nivel-Médio { color: #e65100; font-weight: bold; }
+.nivel-Baixo { color: #33691e; font-weight: bold; }
+
+/* ==========================================================================
+LINKS E AÇÕES
+   ========================================================================== */
+
+a {
+    color: var(--verde-musgo);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--dourado-velho);
+    text-decoration: underline;
+}
+
+/* Links específicos da tabela */
+.link-editar {
+    color: var(--verde-vitoriano);
+    font-weight: 600;
+    margin-right: 12px;
+    display: inline-block;
+}
+
+.link-excluir {
+    color: #a12c2c;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.link-excluir:hover {
+    color: #d32f2f;
+}
+
+/* Estilização para a página de edição voltar */
+a[style*="margin-left: 15px"] {
+    font-family: var(--fonte-serifa);
+    color: var(--marrom-couro);
+    font-weight: bold;
+}
